@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ | GlassCSV</title>
+    <meta name="description" content="GlassCSV へのお問い合わせ。バグ報告、機能要望、その他のご質問をお寄せください。">
+    <meta name="robots" content="index, follow">
+    <link rel="alternate" hreflang="en" href="../../en/support/">
+    <link rel="alternate" hreflang="ja" href="../../ja/support/">
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --accent-color: #3b82f6;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --card-radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            text-decoration: none;
+            background: linear-gradient(to right, #fff, #a1a1aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .content {
+            max-width: 850px;
+            margin: 4rem auto 6rem;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .form-container {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-container iframe {
+            width: 100%;
+            height: 900px;
+            border: none;
+        }
+
+        footer {
+            border-top: 1px solid var(--glass-border);
+            padding: 3rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 1.5rem;
+        }
+
+        footer a:hover {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 1.5rem 2rem; }
+            h1 { font-size: 2rem; }
+            .form-container iframe { height: 1000px; }
+            footer {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <nav>
+        <a href="../../ja/" class="logo"><img src="../../assets/icon/icon-32x32.png" alt="Icon" style="width: 24px; height: 24px; border-radius: 4px; margin-right: 8px; vertical-align: middle;">GlassCSV</a>
+        <div class="nav-links">
+            <a href="../../ja/">ホーム</a>
+            <a href="../../ja/privacy/">プライバシーポリシー</a>
+            <a href="../../ja/terms/">利用規約</a>
+            <a href="../../en/support/">English</a>
+        </div>
+    </nav>
+
+    <main class="content">
+        <h1>お問い合わせ</h1>
+        <p class="subtitle">バグ報告、機能のご要望、その他のご質問をお寄せください。</p>
+
+        <div class="form-container">
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSehtLZyF34UqNxGgyeCSDp5AcvyP8AAlupI65pZMiiaHDxR6Q/viewform?embedded=true"
+                loading="lazy"
+                title="お問い合わせフォーム"
+            >読み込んでいます…</iframe>
+        </div>
+    </main>
+
+    <footer>
+        <div>&copy; 2026 GlassCSV by Yuichi Okuno</div>
+        <div>
+            <a href="../privacy/">プライバシーポリシー</a>
+            <a href="../terms/">利用規約</a>
+            <a href="../support/">お問い合わせ</a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlassCSV | macOS Native CSV Editor</title>
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --accent-color: #3b82f6;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --card-radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, #fff, #a1a1aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        header {
+            max-width: 1000px;
+            margin: 5rem auto 4rem;
+            text-align: center;
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 2.5rem;
+            letter-spacing: -0.04em;
+            text-align: center;
+        }
+
+        .hero-sub {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 3.5rem;
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--text-primary);
+            color: #000;
+            padding: 1.2rem 2.5rem;
+            border-radius: 99px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s, background-color 0.2s;
+            gap: 12px;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            background-color: #f4f4f5;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 8rem auto;
+            padding: 0 4rem;
+        }
+
+        .feature-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 2.5rem;
+            border-radius: var(--card-radius);
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        footer {
+            border-top: 1px solid var(--glass-border);
+            padding: 4rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+                text-align: center;
+            }
+            .features { grid-template-columns: 1fr; padding: 0 2rem; }
+            .pricing-table { flex-direction: column; }
+            nav { padding: 1.5rem 2rem; }
+            footer { flex-direction: column; gap: 2rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <nav>
+        <div class="logo">
+            <img src="../assets/icon/icon-32x32.png" alt="Icon" style="width: 32px; height: 32px; border-radius: 6px; margin-right: 12px; vertical-align: middle;">
+            GlassCSV
+        </div>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="support/">Support</a>
+            <a href="../ja/">Japanese</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Handle your CSV<br>like glass.</h1>
+        <p class="hero-sub">
+            Prevent unintended auto-conversions and data corruption.<br>
+            View, search, filter, and edit. Everything you need, in one app.<br>
+            A professional CSV editor, optimized for macOS.
+        </p>
+        <a href="https://apps.apple.com/app/id6760973542" target="_blank" rel="noopener noreferrer" class="app-store-badge">
+            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/white/en-us?size=250x83&amp;releaseDate=1314144000&h=602e3b2e3e1f3c3d3e3f404142434445" alt="Download on the Mac App Store" style="height: 60px; transition: transform 0.2s;">
+        </a>
+    </header>
+
+    <style>
+        .app-store-badge:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+
+    <section class="screenshot-carousel">
+        <div class="carousel-track">
+            <img src="../assets/screenshots/en/GlassCSV.001.png" alt="GlassCSV - CSV viewing and editing" loading="lazy">
+            <img src="../assets/screenshots/en/GlassCSV.002.png" alt="GlassCSV - Search and replace" loading="lazy">
+            <img src="../assets/screenshots/en/GlassCSV.003.png" alt="GlassCSV - Filter and sort" loading="lazy">
+            <img src="../assets/screenshots/en/GlassCSV.004.png" alt="GlassCSV - Screenshot 4" loading="lazy">
+            <img src="../assets/screenshots/en/GlassCSV.005.png" alt="GlassCSV - Screenshot 5" loading="lazy">
+            <img src="../assets/screenshots/en/GlassCSV.006.png" alt="GlassCSV - Screenshot 6" loading="lazy">
+            <img src="../assets/screenshots/en/GlassCSV.007.png" alt="GlassCSV - Screenshot 7" loading="lazy">
+            <img src="../assets/screenshots/en/GlassCSV.008.png" alt="GlassCSV - Screenshot 8" loading="lazy">
+            <img src="../assets/screenshots/en/GlassCSV.009.png" alt="GlassCSV - Screenshot 9" loading="lazy">
+        </div>
+        <div class="carousel-dots">
+            <button class="carousel-dot active" aria-label="Screenshot 1"></button>
+            <button class="carousel-dot" aria-label="Screenshot 2"></button>
+            <button class="carousel-dot" aria-label="Screenshot 3"></button>
+            <button class="carousel-dot" aria-label="Screenshot 4"></button>
+            <button class="carousel-dot" aria-label="Screenshot 5"></button>
+            <button class="carousel-dot" aria-label="Screenshot 6"></button>
+            <button class="carousel-dot" aria-label="Screenshot 7"></button>
+            <button class="carousel-dot" aria-label="Screenshot 8"></button>
+            <button class="carousel-dot" aria-label="Screenshot 9"></button>
+        </div>
+    </section>
+
+    <style>
+        .screenshot-carousel {
+            max-width: 1100px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            padding: 8px 0;
+        }
+
+        .carousel-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carousel-track img {
+            flex: 0 0 min(100%, 900px);
+            width: min(100%, 900px);
+            height: auto;
+            border-radius: 12px;
+            scroll-snap-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--glass-border);
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 1.5rem;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            padding: 0;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .carousel-dot.active {
+            background: var(--accent-color);
+            transform: scale(1.3);
+        }
+
+        .carousel-dot:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+
+    <script>
+        (function() {
+            const track = document.querySelector('.carousel-track');
+            const dots = document.querySelectorAll('.carousel-dot');
+            const images = track.querySelectorAll('img');
+
+            function updateDots() {
+                const scrollLeft = track.scrollLeft;
+                const trackWidth = track.scrollWidth - track.clientWidth;
+                const index = Math.round((scrollLeft / trackWidth) * (images.length - 1));
+                dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+            }
+
+            track.addEventListener('scroll', updateDots, { passive: true });
+
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => {
+                    images[i].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                });
+            });
+        })();
+    </script>
+
+    <section id="features" class="features">
+        <div class="feature-card">
+            <h3>Preserves Your Data</h3>
+            <p>Prevents leading-zero drops and auto-date conversions. "001" stays "001" — your data is faithfully preserved as text, exactly as-is.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Mac-Native Speed</h3>
+            <p>Built with Swift 6 and AppKit for true native performance. Even large files open, scroll, and search with instant responsiveness.</p>
+        </div>
+        <div class="feature-card">
+            <h3>All-in-One</h3>
+            <p>View, search, filter, and edit. All the essential CSV operations in a single app. Streamline your daily workflow without switching tools.</p>
+        </div>
+    </section>
+
+    <section class="checklist-section">
+        <h2 style="text-align: center; margin-bottom: 4rem; font-size: 2.2rem;">Professional-grade features</h2>
+        <div class="checklist-container">
+            <div class="check-group">
+                <h3>Edit &amp; Operations</h3>
+                <ul>
+                    <li><span class="check">&#10003;</span> Double-click to edit instantly <span class="tag free">BASIC</span></li>
+                    <li><span class="check">&#10003;</span> Copy, cut, and paste <span class="tag free">BASIC</span></li>
+                    <li><span class="check">&#10003;</span> Undo &amp; redo (edit history) <span class="tag free">BASIC</span></li>
+                    <li><span class="check">&#10003;</span> Search &amp; replace <span class="tag free">BASIC</span></li>
+                    <li><span class="check pro">&#10003;</span> Regex search &amp; replace <span class="tag pro">PRO</span></li>
+                    <li><span class="check pro">&#10003;</span> Highlight &amp; remove duplicates <span class="tag pro">PRO</span></li>
+                </ul>
+            </div>
+            <div class="check-group">
+                <h3>Display &amp; Views</h3>
+                <ul>
+                    <li><span class="check">&#10003;</span> English / Japanese support <span class="tag free">BASIC</span></li>
+                    <li><span class="check">&#10003;</span> Auto-detect &amp; toggle header row <span class="tag free">BASIC</span></li>
+                    <li><span class="check">&#10003;</span> Word wrap in cells <span class="tag free">BASIC</span></li>
+                    <li><span class="check">&#10003;</span> Adjustable zoom level <span class="tag free">BASIC</span></li>
+                    <li><span class="check">&#10003;</span> Selection statistics <span class="tag free">BASIC</span></li>
+                    <li><span class="check pro">&#10003;</span> Visual Diff comparison <span class="tag pro">PRO</span></li>
+                </ul>
+            </div>
+            <div class="check-group">
+                <h3>Formats &amp; Export</h3>
+                <ul>
+                    <li><span class="check">&#10003;</span> Comma, tab, space delimiters <span class="tag free">BASIC</span></li>
+                    <li><span class="check">&#10003;</span> LF, CRLF, CR line endings <span class="tag free">BASIC</span></li>
+                    <li><span class="check">&#10003;</span> UTF-8, Shift-JIS, EUC-JP <span class="tag free">BASIC</span></li>
+                    <li><span class="check">&#10003;</span> Fast loading of large files <span class="tag free">BASIC</span></li>
+                    <li><span class="check pro">&#10003;</span> Copy as JSON, Markdown, SQL <span class="tag pro">PRO</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .checklist-section {
+            max-width: 1200px;
+            margin: 8rem auto;
+            padding: 0 4rem;
+        }
+        .checklist-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+        .check-group h3 {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+        .check-group ul {
+            list-style: none;
+        }
+        .check-group li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            flex-wrap: wrap;
+        }
+        .check {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        .check.pro {
+            color: #fbbf24;
+        }
+        .tag {
+            font-size: 0.65rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+        }
+        .tag.basic {
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--accent-color);
+        }
+        .tag.pro {
+            background: rgba(251, 191, 36, 0.15);
+            color: #fbbf24;
+        }
+        @media (max-width: 900px) {
+            .checklist-container { grid-template-columns: 1fr; gap: 2rem; }
+        }
+    </style>
+
+    <style>
+        .pricing {
+            max-width: 800px;
+            margin: 8rem auto;
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        .pricing-table {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            align-items: stretch;
+        }
+
+        .price-box {
+            flex: 1;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 1.5rem 2rem 2.5rem;
+            border-radius: var(--card-radius);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .price-box.pro {
+            border-color: rgba(251, 191, 36, 0.4);
+            position: relative;
+        }
+
+        .price-name {
+            font-weight: 800;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.1em;
+        }
+
+        .price-val {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin: 0;
+        }
+
+        .price-val span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+        }
+
+        .price-list {
+            list-style: none;
+            text-align: left;
+            margin: 2rem 0;
+            color: var(--text-secondary);
+        }
+
+        .price-list li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .price-list li::before {
+            content: "\2713";
+            color: var(--accent-color);
+        }
+
+        .old-price-container {
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+
+    <section id="pricing" class="pricing">
+        <h2>Transparent Pricing</h2>
+        <p style="color: var(--text-secondary); margin: 1.5rem auto 0; max-width: 600px;">
+            One-time purchase. All features included, with future updates.
+        </p>
+
+        <div class="pricing-table">
+            <div class="price-box">
+                <div class="price-name">BASIC</div>
+                <div class="old-price-container" style="height: 25px;"></div>
+                <div class="price-val">$0</div>
+                <ul class="price-list">
+                    <li>Preserves your data as-is</li>
+                    <li>Ultra-fast viewing, search &amp; replace</li>
+                    <li>Basic cell editing</li>
+                    <li>Encoding &amp; delimiter switching</li>
+                    <li>English &amp; Japanese support</li>
+                </ul>
+            </div>
+
+            <div class="price-box pro">
+                <div class="price-name" style="color: #fbbf24;">PRO</div>
+                <div class="old-price-container" style="height: 25px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem;">
+                    <div style="position: relative;">
+                        <span style="font-size: 0.8rem; color: #ff6b6b; font-weight: 700; opacity: 0.9;">Regular price: $29.99</span>
+                        <div style="position: absolute; top: 50%; left: 50%; width: 110%; height: 1px; background: rgba(255, 107, 107, 0.7); transform: translate(-50%, -50%) rotate(-5deg); pointer-events: none;"></div>
+                    </div>
+                </div>
+                <div class="price-val">$9.99<span> / one-time</span></div>
+
+                <ul class="price-list pro-list">
+                    <li>Visual Diff comparison</li>
+                    <li>Highlight &amp; remove duplicates</li>
+                    <li>Regex search &amp; replace</li>
+                    <li>Copy as JSON, Markdown, SQL</li>
+                    <li>Pro badge</li>
+                </ul>
+            </div>
+        </div>
+        <div class="pricing-cta">
+            <a href="https://apps.apple.com/app/id6760973542" target="_blank" rel="noopener noreferrer" class="app-store-badge">
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/white/en-us?size=250x83&amp;releaseDate=1314144000&h=602e3b2e3e1f3c3d3e3f404142434445" alt="Download on the Mac App Store" style="height: 60px; transition: transform 0.2s;">
+            </a>
+        </div>
+        <p style="color: var(--text-secondary); font-size: 0.75rem; margin-top: 1rem;">Free to download. Pro features available via in-app purchase.</p>
+    </section>
+
+    <style>
+        .price-list.pro-list li::before {
+            content: "\2713";
+            color: #fbbf24;
+        }
+        .iap-badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #fbbf24;
+            background: rgba(251, 191, 36, 0.12);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            padding: 3px 10px;
+            border-radius: 99px;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.02em;
+        }
+        .pricing-cta {
+            display: inline-flex;
+            position: relative;
+            margin-top: 2.5rem;
+        }
+        .price-list.pro-list {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+
+    <footer>
+        <div class="footer-left">
+            &copy; 2026 GlassCSV by Yuichi Okuno
+        </div>
+        <div class="footer-right">
+            <a href="privacy/">Privacy Policy</a>
+            <a href="terms/">Terms of Use</a>
+            <a href="support/">Support</a>
+        </div>
+    </footer>
+</body>
+</html>

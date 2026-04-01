@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | GlassCSV</title>
+    <meta name="description" content="GlassCSV Privacy Policy. Our app does not collect any personal data.">
+    <meta name="robots" content="index, follow">
+    <link rel="alternate" hreflang="en" href="../en/privacy/">
+    <link rel="alternate" hreflang="ja" href="../ja/privacy/">
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --accent-color: #3b82f6;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --card-radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            text-decoration: none;
+            background: linear-gradient(to right, #fff, #a1a1aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .content {
+            max-width: 720px;
+            margin: 4rem auto 6rem;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+        }
+
+        .last-updated {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+            padding-left: 0;
+        }
+
+        ul li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "---";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        .summary-box {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--card-radius);
+            padding: 1.5rem 2rem;
+            margin-bottom: 2.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .summary-box p {
+            color: var(--text-primary);
+            font-size: 1.05rem;
+            margin-bottom: 0;
+        }
+
+        footer {
+            border-top: 1px solid var(--glass-border);
+            padding: 3rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--text-secondary);
+            margin-left: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 1.5rem 2rem; }
+            h1 { font-size: 2rem; }
+            footer {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <nav>
+        <a href="../../en/" class="logo"><img src="../../assets/icon/icon-32x32.png" alt="Icon" style="width: 24px; height: 24px; border-radius: 4px; margin-right: 8px; vertical-align: middle;">GlassCSV</a>
+        <div class="nav-links">
+            <a href="../../en/">Home</a>
+            <a href="../../en/terms/">Terms</a>
+            <a href="../../en/support/">Support</a>
+            <a href="../../ja/privacy/">Japanese</a>
+        </div>
+    </nav>
+
+    <main class="content">
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last updated: March 9, 2026</p>
+
+        <div class="summary-box">
+            <p>GlassCSV does not collect any personal data. All file operations are processed locally on your Mac.</p>
+        </div>
+
+        <h2>Data Collection</h2>
+        <p>GlassCSV does not collect or transmit any user data. No personal information, file contents, usage data, or device information is ever sent externally.</p>
+
+        <h2>Local Processing</h2>
+        <p>All CSV files opened in GlassCSV are processed entirely on your Mac. File contents are never sent to any external server.</p>
+
+        <h2>Analytics & Tracking</h2>
+        <p>GlassCSV does not use any third-party analytics tools, advertising SDKs, or tracking technologies.</p>
+
+        <h2>Third-Party Data Sharing</h2>
+        <p>Since no data is collected, there is no personal data to share, sell, or provide to third parties.</p>
+
+        <h2>App Store Purchases</h2>
+        <p>In-app purchases (Pro upgrade) are processed through the Apple App Store. Payment information is managed by Apple, and the developer of GlassCSV does not have access to this information. For details, please refer to <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple's Privacy Policy</a>.</p>
+
+        <h2>Children's Privacy</h2>
+        <p>Since GlassCSV does not collect any data, no personal information from children is ever collected.</p>
+
+        <h2>Changes to This Policy</h2>
+        <p>This privacy policy may be updated as needed. Any significant changes will be communicated on this page.</p>
+
+        <h2>Contact Us</h2>
+        <p>If you have any questions about privacy, please reach out through our <a href="../support/">support page</a>.</p>
+    </main>
+
+    <footer>
+        <div>&copy; 2026 GlassCSV by Yuichi Okuno</div>
+        <div>
+            <a href="../privacy/">Privacy Policy</a>
+            <a href="../terms/">Terms of Use</a>
+            <a href="../support/">Support</a>
+        </div>
+    </footer>
+</body>
+</html>

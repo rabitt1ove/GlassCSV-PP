@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support | GlassCSV</title>
+    <meta name="description" content="Contact GlassCSV support. Submit bug reports, feature requests, or general inquiries.">
+    <meta name="robots" content="index, follow">
+    <link rel="alternate" hreflang="en" href="../../en/support/">
+    <link rel="alternate" hreflang="ja" href="../../ja/support/">
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --accent-color: #3b82f6;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --card-radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            text-decoration: none;
+            background: linear-gradient(to right, #fff, #a1a1aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .content {
+            max-width: 850px;
+            margin: 4rem auto 6rem;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .form-container {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-container iframe {
+            width: 100%;
+            height: 900px;
+            border: none;
+        }
+
+        footer {
+            border-top: 1px solid var(--glass-border);
+            padding: 3rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 1.5rem;
+        }
+
+        footer a:hover {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 1.5rem 2rem; }
+            h1 { font-size: 2rem; }
+            .form-container iframe { height: 1000px; }
+            footer {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <nav>
+        <a href="../../en/" class="logo"><img src="../../assets/icon/icon-32x32.png" alt="Icon" style="width: 24px; height: 24px; border-radius: 4px; margin-right: 8px; vertical-align: middle;">GlassCSV</a>
+        <div class="nav-links">
+            <a href="../../en/">Home</a>
+            <a href="../../en/privacy/">Privacy</a>
+            <a href="../../en/terms/">Terms</a>
+            <a href="../../ja/support/">Japanese</a>
+        </div>
+    </nav>
+
+    <main class="content">
+        <h1>Support</h1>
+        <p class="subtitle">Submit bug reports, feature requests, or general inquiries.</p>
+
+        <div class="form-container">
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSfyLrxQVAV2MZWrVxKuOdZz7HnySgtOsPnYtSV0bHYxMPedPA/viewform?embedded=true"
+                loading="lazy"
+                title="Support Form"
+            >Loading…</iframe>
+        </div>
+    </main>
+
+    <footer>
+        <div>&copy; 2026 GlassCSV by Yuichi Okuno</div>
+        <div>
+            <a href="../privacy/">Privacy Policy</a>
+            <a href="../terms/">Terms of Use</a>
+            <a href="../support/">Support</a>
+        </div>
+    </footer>
+</body>
+</html>

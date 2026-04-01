@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use | GlassCSV</title>
+    <meta name="description" content="GlassCSV Terms of Use. Terms and conditions for using the app, including Pro feature purchases.">
+    <meta name="robots" content="index, follow">
+    <link rel="alternate" hreflang="en" href="../../en/terms/">
+    <link rel="alternate" hreflang="ja" href="../../ja/terms/">
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --accent-color: #3b82f6;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --card-radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            text-decoration: none;
+            background: linear-gradient(to right, #fff, #a1a1aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .content {
+            max-width: 720px;
+            margin: 4rem auto 6rem;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+        }
+
+        .last-updated {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        ul, ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        ul { list-style: none; padding-left: 0; }
+
+        ul li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "---";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        ol li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        footer {
+            border-top: 1px solid var(--glass-border);
+            padding: 3rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--text-secondary);
+            margin-left: 1.5rem;
+        }
+
+        footer a:hover {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 1.5rem 2rem; }
+            h1 { font-size: 2rem; }
+            footer {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <nav>
+        <a href="../../en/" class="logo"><img src="../../assets/icon/icon-32x32.png" alt="Icon" style="width: 24px; height: 24px; border-radius: 4px; margin-right: 8px; vertical-align: middle;">GlassCSV</a>
+        <div class="nav-links">
+            <a href="../../en/">Home</a>
+            <a href="../../en/privacy/">Privacy</a>
+            <a href="../../en/support/">Support</a>
+            <a href="../../ja/terms/">Japanese</a>
+        </div>
+    </nav>
+
+    <main class="content">
+        <h1>Terms of Use</h1>
+        <p class="last-updated">Last updated: March 9, 2026</p>
+
+        <h2>1. Acceptance of Terms</h2>
+        <p>These Terms of Use ("Terms") govern your use of GlassCSV ("the App"). By downloading or using the App, you agree to be bound by these Terms.</p>
+
+        <h2>2. Description of Service</h2>
+        <p>The App is a CSV file editor for macOS. It provides features for viewing, searching, filtering, and editing CSV files.</p>
+
+        <h2>3. Free and Pro Versions</h2>
+        <p>The App offers basic features for free. Additional features ("Pro Features") are available through a one-time in-app purchase.</p>
+        <ul>
+            <li>Pro Features are available permanently after a single purchase</li>
+            <li>Pro Features are described within the App and on this website</li>
+            <li>Pro Features may be updated or expanded in future releases</li>
+        </ul>
+
+        <h2>4. Purchases and Refunds</h2>
+        <p>Pro Feature purchases are processed through the Apple App Store. Apple's terms and policies apply to all purchases and refunds. To request a refund, please contact <a href="https://reportaproblem.apple.com/" target="_blank" rel="noopener noreferrer">Apple Support</a>.</p>
+
+        <h2>5. Prohibited Activities</h2>
+        <p>You agree not to engage in the following activities:</p>
+        <ul>
+            <li>Reverse engineering, decompiling, or disassembling the App</li>
+            <li>Copying, modifying, or redistributing the App</li>
+            <li>Using the App for any unlawful purpose</li>
+        </ul>
+
+        <h2>6. Disclaimer of Warranties</h2>
+        <p>The App is provided "as is" without warranty of any kind, whether express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, accuracy, or data integrity.</p>
+        <p>The App is designed to prevent unintended type conversions and to faithfully preserve original data. However, due to the nature of software, complete functionality cannot be guaranteed under all environments and conditions. For performance optimization, the maximum number of characters retained per cell is limited to 50,000.</p>
+
+        <h2>7. Limitation of Liability</h2>
+        <p>The developer shall not be liable for any damages arising from the use or inability to use the App, regardless of cause, including but not limited to:</p>
+        <ul>
+            <li>Loss or corruption of CSV file data</li>
+            <li>Loss of profits or business interruption</li>
+            <li>Business losses caused by App malfunctions</li>
+            <li>Any other direct, indirect, incidental, special, or punitive damages</li>
+        </ul>
+        <p>We strongly recommend creating backups before editing important data. The user agrees that the developer shall not be liable for damages that could have been avoided through regular backups.</p>
+
+        <h2>8. Intellectual Property</h2>
+        <p>All intellectual property rights related to the App belong to the developer. These Terms do not transfer any intellectual property rights to the user.</p>
+
+        <h2>9. Changes to Terms</h2>
+        <p>The developer may update these Terms as needed. Significant changes will be communicated on this page. Continued use of the App after changes constitutes acceptance of the updated Terms.</p>
+
+        <h2>10. Governing Law</h2>
+        <p>These Terms shall be governed by and construed in accordance with the laws of Japan.</p>
+
+        <h2>Contact</h2>
+        <p>For questions about these Terms, please visit our <a href="../support/">support page</a>.</p>
+    </main>
+
+    <footer>
+        <div>&copy; 2026 GlassCSV by Yuichi Okuno</div>
+        <div>
+            <a href="../privacy/">Privacy Policy</a>
+            <a href="../terms/">Terms of Use</a>
+            <a href="../support/">Support</a>
+        </div>
+    </footer>
+</body>
+</html>
